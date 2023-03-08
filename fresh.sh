@@ -2,6 +2,14 @@
 
 echo "Setting up your Mac..."
 
+# Che for Docker Desktop 4.4.2 and install
+if test ! $(which docker); then
+  /bin/bash -c "$(curl -fsSL https://desktop.docker.com/mac/main/amd64/73305/Docker.dmg)"
+  /bin/bash -c "$(sudo hdiutil attach Docker.dmg)"
+  /bin/bash -c "$(sudo /Volumes/Docker/Docker.app/Contents/MacOS/install)"
+  /bin/bash -c "$(sudo hdiutil detach /Volumes/Docker)"
+fi
+
 # Check for Oh My Zsh and install if we don't have it
 if test ! $(which omz); then
   /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
