@@ -2,7 +2,7 @@
 
 echo "Setting up your Mac..."
 
-# Che for Docker Desktop 4.4.2 and install
+# Check for Docker Desktop 4.4.2 and install
 if test ! $(which docker); then
   /bin/bash -c "$(curl -fsSL https://desktop.docker.com/mac/main/amd64/73305/Docker.dmg)"
   /bin/bash -c "$(sudo hdiutil attach Docker.dmg)"
