@@ -52,8 +52,8 @@ $HOME/.composer/vendor/bin/global-ray install
 # Create a Sites directory
 mkdir $HOME/Sites
 
-# Clone Github repositories
-./clone.sh
+# Clone Git repositories
+#./clone.sh
 
 # Symlink the Mackup config file to the home directory
 ln -s .mackup.cfg $HOME/.mackup.cfg
