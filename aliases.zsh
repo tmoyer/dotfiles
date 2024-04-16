@@ -24,7 +24,7 @@ alias sites="cd $HOME/Sites"
 #alias serve="php artisan serve"
 
 # PHP
-alias cfresh="rm -rf vendor/ composer.lock && composer i"
+#alias cfresh="rm -rf vendor/ composer.lock && composer i"
 #alias composer="php -d memory_limit=-1 /opt/homebrew/bin/composer"
 alias composer='COMPOSE_HTTP_TIMEOUT=200 php -d memory_limit=-1 /usr/local/bin/composer'
 
@@ -45,7 +45,7 @@ alias gc="git checkout"
 alias gl="git log --oneline --decorate --color"
 alias amend="git add . && git commit --amend --no-edit"
 alias commit="git add . && git commit -m"
-alias diff="git diff"
+#alias diff="git diff"
 alias force="git push --force"
 alias nuke="git clean -df && git reset --hard"
 alias pop="git stash pop"
@@ -71,7 +71,9 @@ alias h='history'
 alias hm='history | more'
 alias codeck='./vendor/bin/phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor ./web/modules/custom && ./vendor/bin/phpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor ./web/themes/custom'
 alias php8='/usr/local/Cellar/php/8.1.10_1/bin/php'
-alias composer2='php8 /usr/local/bin/composer2'
+#alias composer2='php8 /usr/local/bin/composer2'
+alias composer2='COMPOSE_HTTP_TIMEOUT=200 php -d memory_limit=-1 /usr/local/bin/composer2'
+alias updatedb='/usr/libexec/locate.updatedb'
 
 # List all files colorized in long format, including dot files
 alias ls='ls -GFhla'
@@ -86,3 +88,13 @@ alias qp='ps auxwww | moree'
 alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias localip='ipconfig getifaddr en1'
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+
+# Custom stuff
+alias sp="git switch master && git pull origin master && git switch develop && git pull origin develop && delete-merged"
+
+# PHP Switching
+alias php7="brew unlink php@8.1 && brew link --overwrite php@7.4"
+alias php8="brew unlink php@7.4 && brew link --overwrite php@8.1"
+
+# Find (instead of locate)
+alias fd="find ~/Sites/ -name $1"
